@@ -13,7 +13,7 @@ const projects = await Astro.glob("../projects/*.md");
           <a href={`/${project.frontmatter.slug}`}>
             <div class="project-overlay">
               <div class="project-content h-full w-full flex flex-col items-start">
-                <h3 class="project-title text-2xl font-bold py-4">
+                <h3 class="project-title text-2xl font-bold py-4 mb-4">
                   {project.frontmatter.title}
                 </h3>
                 <p class="project-desc text-lg py-2">
