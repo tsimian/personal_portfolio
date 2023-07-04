@@ -17,8 +17,17 @@ export async function getStaticPaths() {
 const { frontmatter } = Astro.props.project;
 
 // Destructure frontmatter
-const { title, cover_image, cover_alt, description, source, url, vid, tags } =
-  frontmatter;
+const {
+  title,
+  slug,
+  cover_image,
+  cover_alt,
+  description,
+  source,
+  url,
+  vid,
+  tags,
+} = frontmatter;
 ---
 
 <Layout title={title}>
@@ -32,7 +41,11 @@ const { title, cover_image, cover_alt, description, source, url, vid, tags } =
           </h2>
         </div>
         <div class="image-wrapper container max-w-md">
-          <img class="showcase-image" src={cover_image} alt={cover_alt} />
+          <img
+            class="showcase-image"
+            src=`/assets/${slug}.jpeg`
+            alt={cover_alt}
+          />
         </div>
       </div>
       <!-- Project details -->
@@ -81,7 +94,7 @@ const { title, cover_image, cover_alt, description, source, url, vid, tags } =
         <!-- Modal content -->
         <div class="container video-wrapper flex items-center justify-around">
           <video class="video" muted playsinline controls>
-            <source src={vid} type="video/mp4" />
+            <source src=`/assets/${slug}.mp4` type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
