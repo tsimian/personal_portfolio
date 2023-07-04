@@ -86,14 +86,14 @@ const {
     </div>
     <!-- Modal -->
     <dialog id="my_modal_5" class="modal modal-middle">
-      <form method="dialog" class="modal-box overflow-hidden p-11">
+      <form method="dialog" class="modal-box bg-lightGrey overflow-hidden p-11">
         <!-- Closes modal -->
         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
           >✕</button
         >
         <!-- Modal content -->
         <div class="container video-wrapper flex items-center justify-around">
-          <video class="video" muted playsinline controls>
+          <video class="video rounded-lg" muted playsinline controls>
             <source src=`/assets/${slug}.mp4` type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -139,6 +139,11 @@ const {
     content: "+";
     margin: 0 0.5rem;
     font-weight: 600;
+  }
+
+  /* Modal */
+  .btn-circle {
+    border: none;
   }
 
   /* Modal landscape */
