@@ -1,7 +1,10 @@
 ---
 import Card from "./ProjectCard.astro";
 
-const projects = await Astro.glob("../projects/*.md");
+const allMarkdown = await Astro.glob("../projects/*.md");
+const projects = allMarkdown.sort(
+  (a, b) => a.frontmatter.order - b.frontmatter.order
+);
 ---
 
 <section class="projects py-8">
