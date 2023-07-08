@@ -1,5 +1,5 @@
 ---
-import Card from "./ProjectCard.astro";
+import ProjectCard from "./ProjectCard.astro";
 
 const allMarkdown = await Astro.glob("../projects/*.md");
 const projects = allMarkdown.sort(
@@ -12,7 +12,7 @@ const projects = allMarkdown.sort(
   <div class="md:grid gap-4 md:grid-cols-2 lg:grid-cols-3 sm:flex flex-col">
     {
       projects.map((project) => (
-        <Card>
+        <ProjectCard>
           <a href={`/${project.frontmatter.slug}`}>
             <div
               class="project-wrapper h-full w-full"
@@ -30,7 +30,7 @@ const projects = allMarkdown.sort(
               </div>
             </div>
           </a>
-        </Card>
+        </ProjectCard>
       ))
     }
   </div>
