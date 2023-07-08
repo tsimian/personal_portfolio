@@ -84,35 +84,37 @@ const {
         </div>
       </div>
     </div>
-    <!-- Modal -->
-    <dialog id="my_modal_5" class="modal modal-middle">
-      <form method="dialog" class="modal-box overflow-hidden p-11">
-        <!-- Closes modal -->
-        <button
-          class="modal-btn btn btn-circle btn-ghost absolute right-2 top-2"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            ><path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"></path></svg
-          >
-        </button>
-        <!-- Modal content -->
-        <div class="container video-wrapper flex items-center justify-around">
-          <video class="video rounded-lg" muted playsinline controls>
-            <source src=`/assets/videos/${slug}.mp4` type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </form>
-    </dialog>
+    {
+      // Modal
+      vid && (
+        <dialog id="my_modal_5" class="modal modal-middle">
+          <form method="dialog" class="modal-box overflow-hidden p-11">
+            <button class="modal-btn btn btn-circle btn-ghost absolute right-2 top-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <div class="container video-wrapper flex items-center justify-around">
+              <video class="video rounded-lg" muted playsinline controls>
+                <source src={`/assets/videos/${slug}.mp4`} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </form>
+        </dialog>
+      )
+    }
   </section>
 </Layout>
 
